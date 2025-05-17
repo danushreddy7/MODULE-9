@@ -34,9 +34,35 @@ To develop a Python class with functions to:
 ---
 
 ## 💻 PROGRAM:
+```
+class IntegerList:
+    def __init__(self):
+        self.numbers = []
 
-ADD CODE HERE
+    def create_list(self):
+        elements = input("Enter integers separated by spaces: ")
+        self.numbers = list(map(int, elements.split()))
 
+    def insertion_sort(self):
+        for i in range(1, len(self.numbers)):
+            key = self.numbers[i]
+            j = i - 1
+            while j >= 0 and self.numbers[j] > key:
+                self.numbers[j + 1] = self.numbers[j]
+                j -= 1
+            self.numbers[j + 1] = key
+
+    def display_list(self):
+        print("Sorted List:", self.numbers)
+obj = IntegerList()
+obj.create_list()
+obj.insertion_sort()
+obj.display_list()
+```
 ## OUTPUT:
-
+```
+Input                    Result
+ [5 2 9 1 6]           Sorted List: [1, 2, 5, 6, 9]
+```
 ## RESULT:
+The program was successful.
